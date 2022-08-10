@@ -1,5 +1,9 @@
-const app = require('./src/app');
+const initialApp = require('./src/app');
 
-app.listen(3000, () => {
-    console.log(`welcome to server with port 3000`);
+initialApp().then((app) => {
+    app.listen(3000, () => {
+        console.log(`🚀 Server ready at http://localhost:3000`);
+    });
+}).catch((err) => {
+    console.log(err);
 });
