@@ -1,6 +1,15 @@
 const express = require('express');
-const {} = require('./apollo/apollo');
-const app = express();
+const apolloServer = require('./apollo');
 
 
-module.exports = app;
+const initialApp = async () => {
+    const app = express();
+    await apolloServer.start();
+    apolloServer.applyMiddleware({ app });
+
+    console.log(apolloServer.graphqlPath);
+
+    return app;
+}
+
+module.exports = initialApp;
