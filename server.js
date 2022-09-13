@@ -1,3 +1,5 @@
+const { serverConfig } = require('./config');
+
 const initialApp = require('./src/app');
 
 initialApp().then((app) => {
@@ -6,7 +8,7 @@ initialApp().then((app) => {
             success: true
         })
     })
-    app.listen(3000, () => {
+    app.listen(serverConfig.PORT, () => {
         console.log(`🚀 Server ready at http://localhost:3000`);
     });
 }).catch((err) => {
