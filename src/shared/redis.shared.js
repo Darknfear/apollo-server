@@ -20,7 +20,7 @@ const redisGetKey = async (key) => {
 }
 
 const redisDeleteKey = async (key) => {
-  return await client.del(key);
+  return await client.del(key)
 }
 
 module.exports = {

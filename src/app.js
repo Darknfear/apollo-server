@@ -6,9 +6,6 @@ const initialApp = async () => {
     const app = express();
     await apolloServer.start();
     apolloServer.applyMiddleware({ app });
-
-    console.log(apolloServer.graphqlPath);
-
     return app;
 }
 
