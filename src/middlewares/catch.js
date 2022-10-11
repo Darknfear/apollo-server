@@ -1,6 +1,3 @@
-const catchAsync = (req, res, func) => async (req, res, args) => {
-  console.log('debug', func)
-  next();
-}
+const catchAsync = fn => (req, res, next) => Promise.resolve(fn(req, res)).catch(next);
 
 module.exports = catchAsync;
