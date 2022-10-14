@@ -7,5 +7,4 @@ const HttpResponseError = (code, message) => HttpError(code, message);
 module.exports = {
   HttpResponseSuccess,
   HttpResponseError,
-  // HttpResponse
 };
