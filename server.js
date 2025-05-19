@@ -1,13 +1,10 @@
+require('dotenv').config();
 const initialApp = require('./src/app');
+const { HOST, PORT } = require('./config');
 
 initialApp().then((app) => {
-    app.get('/healthy-check', (req, res) => {
-        return res.status(200).json({
-            success: true
-        })
-    })
-    app.listen(3000, () => {
-        console.log(`🚀 Server ready at http://localhost:3000`);
+    app.listen(5000, HOST, () => {
+        console.log(`🚀 Server ready at http://${HOST}:${PORT}`);
     });
 }).catch((err) => {
     console.log(err);
